@@ -118,6 +118,7 @@ module Fog
           :memory_mb => 'config.hardware.memoryMB',
           :cpus   => 'config.hardware.numCPU',
           :corespersocket   => 'config.hardware.numCoresPerSocket',
+          :annotation => 'config.annotation',
           :overall_status => 'overallStatus',
           :guest_id => 'config.guestId',
           :hardware_version => 'config.version',
@@ -137,7 +138,6 @@ module Fog
         # in order to massage VMware Managed Object References into Attribute Hashes.
         def convert_vm_mob_ref_to_attr_hash(vm_mob_ref)
           return nil unless vm_mob_ref
-
           props = vm_mob_ref.collect!(*ATTR_TO_PROP.values.uniq)
           props_to_attr_hash vm_mob_ref, props
         end

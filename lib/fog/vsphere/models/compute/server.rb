@@ -37,6 +37,7 @@ module Fog
         attribute :corespersocket
         attribute :interfaces
         attribute :volumes
+        attribute :annotation
         attribute :customvalues
         attribute :overall_status, :aliases => 'status'
         attribute :cluster
